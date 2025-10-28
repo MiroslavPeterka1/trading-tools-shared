@@ -1,0 +1,47 @@
+{
+    "name": "@mipet1984/trading-tools-shared",
+    "version": "1.0.0",
+    "description": "Shared functions for trading tools NestJS projects",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/types/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/esm/index.js",
+            "require": "./dist/cjs/index.js",
+            "types": "./dist/types/index.d.ts"
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "clean": "rimraf dist",
+        "build:esm": "tsc -p tsconfig.esm.json",
+        "build:cjs": "tsc -p tsconfig.cjs.json",
+        "build": "npm run clean && npm run build:esm && npm run build:cjs",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [
+        "nestjs",
+        "typeorm",
+        "dto",
+        "entities",
+        "trading"
+    ],
+    "author": "Miroslav Peterka",
+    "license": "MIT",
+    "peerDependencies": {
+        "class-validator": "^0.14.0",
+        "class-transformer": "^0.5.1",
+        "typeorm": "^0.3.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "class-transformer": "^0.5.1",
+        "class-validator": "^0.14.1",
+        "rimraf": "^5.0.0",
+        "typeorm": "^0.3.20",
+        "typescript": "^5.0.0"
+    }
+}
