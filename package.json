@@ -23,6 +23,7 @@
         "prepublishOnly": "npm run build",
         "pack": "npm pack",
         "publish:local": "npm run build && npm pack",
+        "publish:public": "npm publish --access public",
         "test": "echo \"No tests specified\" && exit 0"
     },
     "keywords": [
