@@ -20,7 +20,10 @@
         "build:esm": "tsc -p tsconfig.esm.json",
         "build:cjs": "tsc -p tsconfig.cjs.json",
         "build": "npm run clean && npm run build:esm && npm run build:cjs",
-        "prepublishOnly": "npm run build"
+        "prepublishOnly": "npm run build",
+        "pack": "npm pack",
+        "publish:local": "npm run build && npm pack",
+        "test": "echo \"No tests specified\" && exit 0"
     },
     "keywords": [
         "nestjs",
@@ -32,14 +35,18 @@
     "author": "Miroslav Peterka",
     "license": "MIT",
     "peerDependencies": {
+        "@nestjs/common": "^10.0.0",
         "class-validator": "^0.14.0",
         "class-transformer": "^0.5.1",
-        "typeorm": "^0.3.0"
+        "typeorm": "^0.3.0",
+        "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
+        "@nestjs/common": "^10.0.0",
         "@types/node": "^20.0.0",
         "class-transformer": "^0.5.1",
         "class-validator": "^0.14.1",
+        "reflect-metadata": "^0.1.13",
         "rimraf": "^5.0.0",
         "typeorm": "^0.3.20",
         "typescript": "^5.0.0"
