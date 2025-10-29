@@ -8,3 +8,13 @@ export { LogService } from './shared/services/log/log.service';
 export * from './shared/helpers/date-time.helper';
 export * from './shared/helpers/delay.helper';
 export * from './shared/helpers/env-validator.helper';
+
+//DTOs exports
+export * from './shared/dtos/news.dto';
+
+//Entities exports
+export * from './shared/entities/raw-article.entity';
+export * from './shared/entities/scraped-article.entity';
+export * from './shared/entities/ticker.entity';
+
+//Enum exports
