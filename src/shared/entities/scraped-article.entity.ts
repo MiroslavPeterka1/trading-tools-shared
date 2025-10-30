@@ -14,10 +14,10 @@ export class ScrapedArticle {
   text: string;
 
   @OneToOne(() => RawArticle, (rawArticle) => rawArticle.id)
-  rawArticleRef: RawArticle;
+  rawArticleRef?: RawArticle;
 
   @ManyToOne(() => Ticker, (ticker) => ticker.id)
-  tickersRef: Ticker[];
+  tickersRef?: Ticker[];
 
   @CreateDateColumn()
   created_at?: Date;
