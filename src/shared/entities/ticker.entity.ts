@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, ManyToMany } from 'typeorm';
 import { RawArticle } from './raw-article.entity';
 import { ScrapedArticle } from './scraped-article.entity';
 
@@ -13,11 +13,8 @@ export class Ticker {
   @Column()
   text: string;
 
-  @OneToMany(() => RawArticle, (rawArticle) => rawArticle.id)
+  @ManyToMany(() => RawArticle, (rawArticle) => rawArticle.id)
   rawArticleRef?: RawArticle[];
-
-  @OneToMany(() => ScrapedArticle, (scrapedArticle) => scrapedArticle.id)
-  scrapedArticles?: ScrapedArticle[];
 
   @CreateDateColumn()
   created_at?: Date;
