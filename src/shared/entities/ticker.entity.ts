@@ -1,6 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, ManyToMany } from 'typeorm';
 import { RawArticle } from './raw-article.entity';
-import { ScrapedArticle } from './scraped-article.entity';
 
 @Entity()
 export class Ticker {

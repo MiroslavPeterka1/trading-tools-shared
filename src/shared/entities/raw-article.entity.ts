@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, OneToOne, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, OneToOne, OneToMany, ManyToMany, JoinTable } from 'typeorm';
 import { ScrapedArticle } from './scraped-article.entity';
 import { Ticker } from './ticker.entity';
 
@@ -26,10 +26,12 @@ export class RawArticle {
   type: string;
 
   @OneToOne(() => ScrapedArticle, (scrapedArticle) => scrapedArticle.id)
+  @JoinTable()
   scrapedArticle?: ScrapedArticle;
 
-  @ManyToOne(() => Ticker, (ticker) => ticker.id)
-  tickersRef: Ticker[];
+  @ManyToMany(() => Ticker, (ticker) => ticker.id)
+  @JoinTable()
+  tickersRef?: Ticker[];
 
   @CreateDateColumn()
   created_at?: Date;
