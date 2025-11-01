@@ -13,8 +13,7 @@ export * from './shared/helpers/env-validator.helper';
 export * from './shared/dtos/news.dto';
 
 //Entities exports
-export * from './shared/entities/raw-article.entity';
-export * from './shared/entities/scraped-article.entity';
+export * from './shared/entities/article.entity';
 export * from './shared/entities/ticker.entity';
 
 //Enum exports

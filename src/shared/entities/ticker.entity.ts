@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, ManyToMany } from 'typeorm';
-import { RawArticle } from './raw-article.entity';
+import { RawArticle } from './article.entity';
 
 @Entity()
 export class Ticker {
