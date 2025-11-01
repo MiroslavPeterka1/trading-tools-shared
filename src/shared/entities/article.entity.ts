@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, On
 import { Ticker } from './ticker.entity';
 
 @Entity()
-export class RawArticle {
+export class Article {
   @PrimaryGeneratedColumn()
   id?: number;
 

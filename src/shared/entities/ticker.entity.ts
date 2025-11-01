@@ -1,5 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, ManyToMany } from 'typeorm';
-import { RawArticle } from './article.entity';
+import { Article } from './article.entity';
 
 @Entity()
 export class Ticker {
@@ -12,8 +12,8 @@ export class Ticker {
   @Column()
   text: string;
 
-  @ManyToMany(() => RawArticle, (rawArticle) => rawArticle.id)
-  rawArticleRef?: RawArticle[];
+  @ManyToMany(() => Article, (article) => article.id)
+  articleRef?: Article[];
 
   @CreateDateColumn()
   created_at?: Date;
